@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powering Up in Diablo 4 - Maxroll Style Guide</title>
+    <style>
+        :root {
+            --bg-body: #090909;
+            --bg-content: #121212;
+            --bg-sidebar: #181818;
+            --primary-gold: #c1a058;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-blue: #00ccff;
+            --border-color: #2c2c2c;
+            --header-bg: #111111;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .maxroll-header {
+            background-color: var(--header-bg);
+            border-bottom: 2px solid var(--primary-gold);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .maxroll-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .main-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            gap: 30px;
+        }
+
+        /* Sidebar / Table of Contents */
+        .sidebar {
+            width: 300px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            background: var(--bg-sidebar);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar h3 {
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 12px 0;
+        }
+
+        .sidebar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .sidebar a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+            background: var(--bg-content);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .disclaimer-box {
+            background: rgba(193, 160, 88, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: var(--primary-gold);
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .article-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .keyword {
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        ul.feature-list li {
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .main-wrapper { flex-direction: column; }
+            .sidebar { width: 100%; position: static; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="maxroll-header">
+    <h1>Powering Up in Diablo 4</h1>
+</header>
+
+<div class="main-wrapper">
+    <nav class="sidebar">
+        <h3>สารบัญ (Table of Contents)</h3>
+        <ul>
+            <li><a href="#legendary">1. การสะสม Legendary Aspects</a></li>
+            <li><a href="#upgrading">2. การอัปเกรดและปรับแต่งอุปกรณ์</a></li>
+            <li><a href="#renown">3. การเก็บ Renown ให้ครบ</a></li>
+            <li><a href="#glyphs">4. การหาและอัปเลเวล Glyphs</a></li>
+            <li><a href="#ancestral">5. การหาไอเทม Ancestral และ Unique</a></li>
+            <li><a href="#summary">6. บทสรุป</a></li>
+        </ul>
+    </nav>
+
+    <article class="content">
+        <div class="author-box">
+            <span>By <strong>Maxroll Team</strong></span>
+            <span>•</span>
+            <span>อัปเดตล่าสุด: 25 เมษายน 2026</span>
+        </div>
+
+        <div class="disclaimer-box">
+            <strong>Lord of Hatred Launch:</strong> เนื่องจากการเปิดตัว Expansion ใหม่ ข้อมูลบางส่วนในบทความนี้อาจมีการปรับปรุง โปรดสนุกกับการค้นหาระบบใหม่ๆ ในขณะที่เรากำลังอัปเดตข้อมูลให้เป็นปัจจุบันที่สุด!
+        </div>
+
+        <p>การเพิ่มพลัง (Powering Up) มุ่งเน้นไปที่องค์ประกอบที่มีความหมายที่สุดในการพัฒนาตัวละครของคุณ ไม่ว่าคุณจะทำกิจกรรมใด คุณจะสะสมวัสดุ ค่าประสบการณ์ อุปกรณ์ และทองที่จำเป็นในการสร้างตัวละครระดับ Endgame ที่สมบูรณ์แบบ เป้าหมายของเราคือช่วยให้คุณจัดการทรัพยากรเหล่านั้นได้ดีขึ้น</p>
+
+        <h2 id="legendary">1. การเติมเต็ม Legendary Aspects</h2>
+        <p>ในช่วงแรก คุณมักจะยังไม่มีไอเทม Legendary ครบทุกช่อง โดยเฉพาะชิ้นที่สำคัญต่อ Build เคล็ดลับในการหาไอเทมที่คุณต้องการมีดังนี้:</p>
+
+        <h3>Season Journey</h3>
+        <p>Season Journey มอบรางวัลเป็นไอเทม Legendary ที่ตรงตามสายสกิลของแต่ละคลาส การได้รับไอเทมที่การันตีเหล่านี้จะช่วยให้คุณเริ่ม Build ได้ง่ายขึ้นมาก</p>
+
+        <h3>Codex of Power</h3>
+        <p>ในปัจจุบัน Legendary Aspects ทั้งหมดสามารถบันทึกลงใน <span class="keyword">Codex of Power</span> ได้ เพียงแค่นำไอเทมที่ไม่ได้ใช้ไป Salvage ที่ช่างตีเหล็ก พลังนั้นจะถูกบันทึกไว้และนำไป <span class="keyword">Imprint</span> ลงในไอเทมอื่นได้ไม่จำกัดครั้ง</p>
+
+        <h3>Murmuring Obols & Tree of Whispers</h3>
+        <p>ใช้ Obols สุ่มไอเทมเฉพาะส่วนที่ <span class="keyword">Purveyor of Curiosities</span> หรือทำภารกิจ <span class="keyword">Tree of Whispers</span> เพื่อเลือกรับกล่องอุปกรณ์เฉพาะส่วน เพื่อหา Aspect ที่ยังขาดอยู่</p>
+
+        <h2 id="upgrading">2. การอัปเกรด, การใส่ Socket และการ Enchant อุปกรณ์</h2>
+        <p>เมื่อคุณเริ่มมีอุปกรณ์ระดับที่พอใจแล้ว การลงทุนทรัพยากรเพื่ออัปเกรดเป็นสิ่งจำเป็น:</p>
+        
+        <ul class="feature-list">
+            <li><span class="keyword">Tempering:</span> การเพิ่ม Affixes พิเศษลงในอุปกรณ์ (Rare ได้ 1 อย่าง, Legendary ได้ 2 อย่าง) เป็นวิธีเพิ่มพลังที่แรงที่สุดในช่วงแรก</li>
+            <li><span class="keyword">Masterworking:</span> ระบบอัปเกรดขั้นสูงที่เพิ่ม Stat ทั้งหมดของไอเทม และจะสุ่มเพิ่มโบนัสพิเศษ 25% ที่ระดับ 4, 8 และ 12</li>
+            <li><span class="keyword">Enchanting:</span> การรีโรลค่า Stat ที่ไม่ต้องการที่ Occultist เพื่อให้ได้ค่าที่สมบูรณ์แบบที่สุด</li>
+        </ul>
+
+        <h2 id="renown">3. การเก็บสะสม Renown</h2>
+        <p>การทำภารกิจชื่อเสียงใน 6 ภูมิภาคจะปลดล็อกรางวัลที่ใช้ร่วมกันได้ทุกตัวละคร (Account-wide) โดยเฉพาะ <span class="important">Skill Points และ Paragon Points</span></p>
+
+        <h3>Altars of Lilith</h3>
+        <img src="https://assets.maxroll.gg/wp-content/uploads/2023/05/Renown_Scosglen_Tab.jpg" alt="Altars of Lilith Map" class="article-img">
+        <p>การตามหาแท่นบูชาลิลิธมอบโบนัสถาวรทั้งค่า Attributes, เลือด และความจุ Obol ซึ่งสำคัญมากในการเพิ่มพื้นฐานความเก่งของตัวละคร</p>
+
+        <h2 id="glyphs">4. การหาและอัปเลเวล Glyphs</h2>
+        <p>Glyphs มอบพลังมหาศาลบนบอร์ด Paragon ของคุณ:</p>
+        <ul class="feature-list">
+            <li><strong>Acquiring Glyphs:</strong> ดรอปได้สุ่มจากกิจกรรมต่างๆ ในระดับความยาก Torment</li>
+            <li><strong>Leveling Glyphs:</strong> คุณต้องลง <span class="keyword">The Pit</span> เพื่ออัปเกรดเลเวล Glyph</li>
+            <li><strong>จุดเปลี่ยนสำคัญ:</strong> เมื่อ Glyph ถึงเลเวล 15 รัศมีบนบอร์ดจะกว้างขึ้น ทำให้ครอบคลุมจุด Bonus ได้มากขึ้น</li>
+        </ul>
+        <img src="https://assets.maxroll.gg/wp-content/uploads/2023/04/D4_Paragon_Glyph_Radius_1-1.jpg" alt="Glyph Radius" class="article-img">
+
+        <h2 id="ancestral">5. การหาไอเทม Ancestral และ Unique</h2>
+        <p>ระดับความยาก (Difficulty) เป็นตัวกำหนดระดับไอเทม:</p>
+        <ul>
+            <li>ระดับ Standard: ดรอปไอเทมปกติ</li>
+            <li>ระดับ Torment: เริ่มดรอป <span class="keyword">Ancestral Legendary</span> และ <span class="keyword">Mythic Uniques</span></li>
+        </ul>
+        <img src="https://assets.maxroll.gg/wp-content/uploads/2024/04/Ancestral-Masterworked-Item.png" alt="Ancestral Item" class="article-img" style="max-width: 300px; display: block; margin: 20px auto;">
+
+        <h2 id="summary">6. บทสรุป</h2>
+        <p>ใช้ระบบ Codex of Power ให้เกิดประโยชน์, อัปเกรดอุปกรณ์ด้วย Tempering และ Masterworking เสมอ, และอย่าลืมเก็บ Renown ให้ครบเพื่อแต้ม Paragon ฟรี เป้าหมายสูงสุดคือการไต่ระดับไปสู่ Torment เพื่อหาไอเทม Ancestral ที่ดีที่สุด!</p>
+
+    </article>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Maxroll.gg Fan UI Style | เนื้อหานี้จัดทำขึ้นเพื่อการเรียนรู้และสรุปข้อมูลเกม Diablo 4</p>
+</footer>
+
+</body>
+</html>
