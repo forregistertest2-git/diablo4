@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablo IV - Knowledge Portal</title>
+    <style>
+        :root {
+            --d4-gold: #c1a058;
+            --d4-gold-bright: #ffcc00;
+            --d4-red: #8b0000;
+            --d4-bg: #0a0a0a;
+            --d4-card-bg: rgba(20, 20, 20, 0.95);
+            --d4-border: #332d24;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--d4-bg);
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.blz-contentstack.com/v3/assets/blt77f4425d89756ff8/blt06050b16503c1555/63769931b6e4e510695029e0/D4_Open_Beta_Wallpaper_Logo_2560x1440.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Times New Roman', serif;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: var(--d4-gold);
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(193, 160, 88, 0.5);
+            border-bottom: 2px solid var(--d4-gold);
+            padding-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            width: 90%;
+            padding: 20px;
+        }
+
+        .portal-card {
+            background: var(--d4-card-bg);
+            border: 2px solid var(--d4-border);
+            border-radius: 4px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .portal-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .portal-card:hover {
+            border-color: var(--d4-gold);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(193, 160, 88, 0.2);
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .portal-card h2 {
+            color: var(--d4-gold);
+            margin: 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .portal-card p {
+            color: #888;
+            font-size: 1rem;
+            margin: 15px 0 0;
+            position: relative;
+        }
+
+        .portal-card:hover h2 {
+            color: var(--d4-gold-bright);
+        }
+
+        /* Decorative Corners */
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--d4-gold);
+            opacity: 0.5;
+        }
+        .tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+        .bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+        .br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+        .footer {
+            margin-top: auto;
+            padding: 40px;
+            color: #555;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Placeholder for adding more cards easily */
+        .empty-slot {
+            border: 2px dashed #222;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            border-radius: 4px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Archive of Sanctuary</h1>
+        <p>คลังข้อมูลลับแห่งวิหารศักดิ์สิทธิ์</p>
+    </header>
+
+    <div class="portal-grid">
+        <a href="powering_up.html" class="portal-card">
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+            <h2>Powering Up Guide</h2>
+            <p>คู่มือการพัฒนาตัวละครสู่ระดับ Endgame และการจัดการทรัพยากร</p>
+        </a>
+
+        <div class="empty-slot">
+            <span>[ New Data Slot ]</span>
+        </div>
+
+        <div class="empty-slot">
+            <span>[ New Data Slot ]</span>
+        </div>
+    </div>
+
+    <footer class="footer">
+        "By Three They Come..." - Knowledge is the only weapon against the Burning Hells.
+    </footer>
+
+</body>
+</html>
