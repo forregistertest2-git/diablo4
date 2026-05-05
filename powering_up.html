@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powering Up in Diablo 4 - Maxroll Style Guide</title>
+    <title>[ชื่อหัวข้อของคุณ] - Diablo IV Knowledge Portal</title>
     <style>
         :root {
             --bg-body: #090909;
@@ -18,7 +18,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Sarabun", sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
@@ -26,18 +26,46 @@
             padding: 0;
         }
 
+        /* ปรับปรุงส่วนปุ่ม Back ให้อยู่คนละแถว */
+        .top-bar {
+            background-color: #000;
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+            border-color: var(--primary-gold);
+        }
+
         .maxroll-header {
             background-color: var(--header-bg);
             border-bottom: 2px solid var(--primary-gold);
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         .maxroll-header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: white;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
@@ -49,7 +77,6 @@
             gap: 30px;
         }
 
-        /* Sidebar / Table of Contents */
         .sidebar {
             width: 300px;
             position: sticky;
@@ -64,32 +91,17 @@
         .sidebar h3 {
             color: var(--primary-gold);
             font-size: 1.1rem;
-            margin-top: 0;
+            margin: 0 0 10px 0;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin: 12px 0; }
+        .sidebar a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+        .sidebar a:hover { color: var(--primary-gold); }
 
-        .sidebar li {
-            margin: 12px 0;
-        }
-
-        .sidebar a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .sidebar a:hover {
-            color: var(--primary-gold);
-        }
-
-        /* Content Area */
         .content {
             flex: 1;
             background: var(--bg-content);
@@ -98,18 +110,7 @@
             border: 1px solid var(--border-color);
         }
 
-        .author-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .disclaimer-box {
+        .highlight-box {
             background: rgba(193, 160, 88, 0.1);
             border-left: 4px solid var(--primary-gold);
             padding: 20px;
@@ -117,169 +118,119 @@
             border-radius: 4px;
         }
 
-        h2 {
-            color: var(--primary-gold);
-            font-size: 1.75rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
+        h2 { color: var(--primary-gold); font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; text-transform: uppercase; }
+        h3 { color: white; font-size: 1.4rem; margin-top: 30px; }
+        p { margin-bottom: 20px; font-size: 1.05rem; color: #ccc; }
+        
+        .keyword { color: var(--accent-blue); font-weight: bold; }
 
-        h3 {
-            color: white;
-            font-size: 1.4rem;
-            margin-top: 30px;
-        }
-
-        p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .article-img {
-            width: 100%;
+        .img-container {
+            margin: 30px 0;
+            text-align: center;
+            background: #000;
+            padding: 15px;
             border-radius: 8px;
-            margin: 20px 0;
             border: 1px solid var(--border-color);
         }
 
-        .keyword {
-            color: var(--accent-blue);
-            font-weight: bold;
+        .article-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
         }
 
-        ul.feature-list li {
-            margin-bottom: 15px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
+        .img-caption {
+            color: #666;
             font-size: 0.85rem;
+            margin-top: 10px;
+            font-style: italic;
         }
 
-        @media (max-width: 900px) {
+        .img-error-label {
+            display: none;
+            color: #ff4444;
+            padding: 15px;
+            border: 1px dashed #ff4444;
+            font-size: 0.85rem;
+            background: rgba(255,0,0,0.05);
+        }
+
+        .footer { text-align: center; padding: 60px 40px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 50px; }
+
+        @media (max-width: 950px) {
             .main-wrapper { flex-direction: column; }
-            .sidebar { width: 100%; position: static; }
+            .sidebar { width: 100%; position: static; box-sizing: border-box; }
+            .maxroll-header h1 { font-size: 1.6rem; }
         }
-        /* เพิ่มปุ่ม Back สไตล์ Diablo ไว้ที่มุมซ้ายบน */
-.back-nav {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-}
-
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary-gold);
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid var(--border-color);
-    padding: 8px 16px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-    background: var(--primary-gold);
-    color: #000;
-}
     </style>
 </head>
 <body>
-<div class="back-nav">
-    <a href="index.html" class="back-btn">← Back to Diablo IV - Knowledge Portal</a>
-</div>
-<header class="maxroll-header">
-    <h1>Powering Up in Diablo 4</h1>
-</header>
 
-<div class="main-wrapper">
-    <nav class="sidebar">
-        <h3>สารบัญ (Table of Contents)</h3>
-        <ul>
-            <li><a href="#legendary">1. การสะสม Legendary Aspects</a></li>
-            <li><a href="#upgrading">2. การอัปเกรดและปรับแต่งอุปกรณ์</a></li>
-            <li><a href="#renown">3. การเก็บ Renown ให้ครบ</a></li>
-            <li><a href="#glyphs">4. การหาและอัปเลเวล Glyphs</a></li>
-            <li><a href="#ancestral">5. การหาไอเทม Ancestral และ Unique</a></li>
-            <li><a href="#summary">6. บทสรุป</a></li>
-        </ul>
-    </nav>
+    <!-- แยกส่วนปุ่ม Back ออกมาเป็นแถวบนสุด -->
+    <div class="top-bar">
+        <a href="index.html" class="back-btn">
+            ← Back to Diablo IV - Knowledge Portal
+        </a>
+    </div>
 
-    <article class="content">
-        <div class="author-box">
-            <span>By <strong>Maxroll Team</strong></span>
-            <span>•</span>
-            <span>อัปเดตล่าสุด: 25 เมษายน 2026</span>
-        </div>
+    <header class="maxroll-header">
+        <!-- EDIT HERE: ชื่อหัวข้อหลักของหน้า -->
+        <h1>[ชื่อหัวข้อหลัก]</h1>
+    </header>
 
-        <div class="disclaimer-box">
-            <strong>Lord of Hatred Launch:</strong> เนื่องจากการเปิดตัว Expansion ใหม่ ข้อมูลบางส่วนในบทความนี้อาจมีการปรับปรุง โปรดสนุกกับการค้นหาระบบใหม่ๆ ในขณะที่เรากำลังอัปเดตข้อมูลให้เป็นปัจจุบันที่สุด!
-        </div>
+    <div class="main-wrapper">
+        <nav class="sidebar">
+            <h3>สารบัญ</h3>
+            <ul>
+                <!-- EDIT HERE: ลิงก์ไปยัง ID ต่างๆ -->
+                <li><a href="#section1">1. หัวข้อที่หนึ่ง</a></li>
+                <li><a href="#section2">2. หัวข้อที่สอง</a></li>
+                <li><a href="#section3">3. หัวข้อที่สาม</a></li>
+            </ul>
+        </nav>
 
-        <p>การเพิ่มพลัง (Powering Up) มุ่งเน้นไปที่องค์ประกอบที่มีความหมายที่สุดในการพัฒนาตัวละครของคุณ ไม่ว่าคุณจะทำกิจกรรมใด คุณจะสะสมวัสดุ ค่าประสบการณ์ อุปกรณ์ และทองที่จำเป็นในการสร้างตัวละครระดับ Endgame ที่สมบูรณ์แบบ เป้าหมายของเราคือช่วยให้คุณจัดการทรัพยากรเหล่านั้นได้ดีขึ้น</p>
+        <article class="content">
+            <div class="highlight-box">
+                <strong>คำแนะนำจาก Sanctuary:</strong> สรุปสั้นๆ เกี่ยวกับเนื้อหาในหน้านี้
+            </div>
 
-        <h2 id="legendary">1. การเติมเต็ม Legendary Aspects</h2>
-        <p>ในช่วงแรก คุณมักจะยังไม่มีไอเทม Legendary ครบทุกช่อง โดยเฉพาะชิ้นที่สำคัญต่อ Build เคล็ดลับในการหาไอเทมที่คุณต้องการมีดังนี้:</p>
+            <!-- หัวข้อที่ 1 -->
+            <h2 id="section1">1. หัวข้อที่หนึ่ง</h2>
+            <p>ใส่เนื้อหาบรรยายที่นี่ ใช้ <span class="keyword">คำสำคัญ</span> เพื่อเน้นจุดที่น่าสนใจ</p>
+            
+            <div class="img-container">
+                <img src="example-image.webp" alt="คำอธิบายรูปภาพ" class="article-img" onerror="showError(this, 'example-image.webp')">
+                <div class="img-error-label">⚠️ ไม่พบไฟล์: example-image.webp</div>
+                <div class="img-caption"></div>
+            </div>
 
-        <h3>Season Journey</h3>
-        <p>Season Journey มอบรางวัลเป็นไอเทม Legendary ที่ตรงตามสายสกิลของแต่ละคลาส การได้รับไอเทมที่การันตีเหล่านี้จะช่วยให้คุณเริ่ม Build ได้ง่ายขึ้นมาก</p>
+            <!-- หัวข้อที่ 2 -->
+            <h2 id="section2">2. หัวข้อที่สอง</h2>
+            <p>เนื้อหาเพิ่มเติมสำหรับส่วนที่สอง...</p>
 
-        <h3>Codex of Power</h3>
-        <p>ในปัจจุบัน Legendary Aspects ทั้งหมดสามารถบันทึกลงใน <span class="keyword">Codex of Power</span> ได้ เพียงแค่นำไอเทมที่ไม่ได้ใช้ไป Salvage ที่ช่างตีเหล็ก พลังนั้นจะถูกบันทึกไว้และนำไป <span class="keyword">Imprint</span> ลงในไอเทมอื่นได้ไม่จำกัดครั้ง</p>
+            <!-- หัวข้อที่ 3 -->
+            <h2 id="section3">3. หัวข้อที่สาม</h2>
+            <p>เนื้อหาเพิ่มเติมสำหรับส่วนที่สาม...</p>
 
-        <h3>Murmuring Obols & Tree of Whispers</h3>
-        <p>ใช้ Obols สุ่มไอเทมเฉพาะส่วนที่ <span class="keyword">Purveyor of Curiosities</span> หรือทำภารกิจ <span class="keyword">Tree of Whispers</span> เพื่อเลือกรับกล่องอุปกรณ์เฉพาะส่วน เพื่อหา Aspect ที่ยังขาดอยู่</p>
+        </article>
+    </div>
 
-        <h2 id="upgrading">2. การอัปเกรด, การใส่ Socket และการ Enchant อุปกรณ์</h2>
-        <p>เมื่อคุณเริ่มมีอุปกรณ์ระดับที่พอใจแล้ว การลงทุนทรัพยากรเพื่ออัปเกรดเป็นสิ่งจำเป็น:</p>
-        
-        <ul class="feature-list">
-            <li><span class="keyword">Tempering:</span> การเพิ่ม Affixes พิเศษลงในอุปกรณ์ (Rare ได้ 1 อย่าง, Legendary ได้ 2 อย่าง) เป็นวิธีเพิ่มพลังที่แรงที่สุดในช่วงแรก</li>
-            <li><span class="keyword">Masterworking:</span> ระบบอัปเกรดขั้นสูงที่เพิ่ม Stat ทั้งหมดของไอเทม และจะสุ่มเพิ่มโบนัสพิเศษ 25% ที่ระดับ 4, 8 และ 12</li>
-            <li><span class="keyword">Enchanting:</span> การรีโรลค่า Stat ที่ไม่ต้องการที่ Occultist เพื่อให้ได้ค่าที่สมบูรณ์แบบที่สุด</li>
-        </ul>
+    <script>
+        function showError(img, name) {
+            img.style.display = 'none';
+            const label = img.nextElementSibling;
+            if(label && label.classList.contains('img-error-label')) {
+                label.style.display = 'block';
+                label.innerHTML = `⚠️ ไม่พบไฟล์รูปภาพ: <strong>${name}</strong><br><small>(โปรดตรวจสอบตัวพิมพ์เล็ก-ใหญ่ใน GitHub)</small>`;
+            }
+        }
+    </script>
 
-        <h2 id="renown">3. การเก็บสะสม Renown</h2>
-        <p>การทำภารกิจชื่อเสียงใน 6 ภูมิภาคจะปลดล็อกรางวัลที่ใช้ร่วมกันได้ทุกตัวละคร (Account-wide) โดยเฉพาะ <span class="important">Skill Points และ Paragon Points</span></p>
-
-        <h3>Altars of Lilith</h3>
-        <img src="images/Scosglen-Renown.webp" alt="Altars of Lilith Map" class="article-img">
-        <p>การตามหาแท่นบูชาลิลิธมอบโบนัสถาวรทั้งค่า Attributes, เลือด และความจุ Obol ซึ่งสำคัญมากในการเพิ่มพื้นฐานความเก่งของตัวละคร</p>
-
-        <h2 id="glyphs">4. การหาและอัปเลเวล Glyphs</h2>
-        <p>Glyphs มอบพลังมหาศาลบนบอร์ด Paragon ของคุณ:</p>
-        <ul class="feature-list">
-            <li><strong>Acquiring Glyphs:</strong> ดรอปได้สุ่มจากกิจกรรมต่างๆ ในระดับความยาก Torment</li>
-            <li><strong>Leveling Glyphs:</strong> คุณต้องลง <span class="keyword">The Pit</span> เพื่ออัปเกรดเลเวล Glyph</li>
-            <li><strong>จุดเปลี่ยนสำคัญ:</strong> เมื่อ Glyph ถึงเลเวล 15 รัศมีบนบอร์ดจะกว้างขึ้น ทำให้ครอบคลุมจุด Bonus ได้มากขึ้น</li>
-        </ul>
-        <img src="images/Paragon-Board_Glyph.webp" alt="Glyph Radius" class="article-img">
-
-        <h2 id="ancestral">5. การหาไอเทม Ancestral และ Unique</h2>
-        <p>ระดับความยาก (Difficulty) เป็นตัวกำหนดระดับไอเทม:</p>
-        <ul>
-            <li>ระดับ Standard: ดรอปไอเทมปกติ</li>
-            <li>ระดับ Torment: เริ่มดรอป <span class="keyword">Ancestral Legendary</span> และ <span class="keyword">Mythic Uniques</span></li>
-        </ul>
-        <img src="images/AncestralMasterworkedItem.webp" alt="Ancestral Item" class="article-img" style="max-width: 300px; display: block; margin: 20px auto;">
-
-        <h2 id="summary">6. บทสรุป</h2>
-        <p>ใช้ระบบ Codex of Power ให้เกิดประโยชน์, อัปเกรดอุปกรณ์ด้วย Tempering และ Masterworking เสมอ, และอย่าลืมเก็บ Renown ให้ครบเพื่อแต้ม Paragon ฟรี เป้าหมายสูงสุดคือการไต่ระดับไปสู่ Torment เพื่อหาไอเทม Ancestral ที่ดีที่สุด!</p>
-
-    </article>
-</div>
-
-<footer class="footer">
-    <p>© 2026 Maxroll.gg Fan UI Style | เนื้อหานี้จัดทำขึ้นเพื่อการเรียนรู้และสรุปข้อมูลเกม Diablo 4</p>
-</footer>
+    <footer class="footer">
+        <p>© 2026 Diablo IV Knowledge Portal | พัฒนาโดย [ชื่อของคุณ]</p>
+    </footer>
 
 </body>
 </html>
